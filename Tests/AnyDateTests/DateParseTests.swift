@@ -482,16 +482,4 @@ final class DateParseTests: XCTestCase {
         ]
         XCTAssertFalse(try! AnyDateParser().parse(string: "2009-08-12T22:15Z").isAmbiguous)
     }
-    
-    static var allTests = [
-        ("testUTC", testUTC),
-        ("testInvalid", testInvalid),
-        ("testValid", testValid),
-        ("testMany", testMany),
-        ("testSomeErrors", testSomeErrors),
-        ("testContext", testContext),
-        ("testParseErrors", testParseErrors),
-        ("testParseReferenceLayout", testParseReferenceLayout),
-        ("testParseAmbiguous", testParseAmbiguous),
-    ]
 }

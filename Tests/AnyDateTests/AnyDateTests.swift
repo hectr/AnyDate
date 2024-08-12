@@ -235,12 +235,4 @@ final class AnyDateTests: XCTestCase {
             Fixture(datestr: "2015-02-08 03:02:00.001 +0700 MST m=+0.000000001", date: "2015-02-08 03:02:00.001 -0700", format: "yyyy-MM-dd HH:mm:ss.SSS Z"),
         ]
     }
-    
-    static var allTests = [
-        ("testComplexLayouts", testComplexLayouts),
-        ("testLayouts", testLayouts),
-        ("testDateOnlyLayouts", testDateOnlyLayouts),
-        ("testDates", testDates),
-        ("testLenient", testLenient),
-    ]
 }

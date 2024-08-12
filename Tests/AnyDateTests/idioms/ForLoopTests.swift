@@ -77,12 +77,4 @@ class ForLoopTests: XCTestCase {
         XCTAssertEqual(j, 5)
         XCTAssertEqual(returned.wrapped!, 2)
     }
-
-    static var allTests = [
-        ("testForLoopFinishes", testForLoopFinishes),
-        ("testForLoopCanThrow", testForLoopCanThrow),
-        ("testForLoopCanBreak", testForLoopCanBreak),
-        ("testForLoopCanContinue", testForLoopCanContinue),
-        ("testForCanReturn", testForCanReturn),
-    ]
 }

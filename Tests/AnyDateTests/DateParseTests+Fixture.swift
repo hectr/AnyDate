@@ -40,8 +40,8 @@ extension DateParseTests {
             var parser = AnyDateParser()
             parser.locale = locale
             parser.timeZone = timeZone
-            XCTAssertEqual("\(try? parser.parse(string: input).date())",
-                "\(Fixture.dateFormatter(dateFormat: format, locale: nil, timeZone: timeZone).date(from: out))",
+            XCTAssertEqual(try? parser.parse(string: input).date().description,
+                           Fixture.dateFormatter(dateFormat: format, locale: nil, timeZone: timeZone).date(from: out)?.description,
                 file: file,
                 line: line)
         }
@@ -50,8 +50,8 @@ extension DateParseTests {
             var parser = AnyDateParser()
             let timeZone = TimeZone(identifier: loc)
             parser.timeZone = timeZone
-            XCTAssertEqual("\(try? parser.parse(string: input).date())",
-                "\(Fixture.dateFormatter(dateFormat: format, locale: nil, timeZone: timeZone).date(from: out))",
+            XCTAssertEqual(try? parser.parse(string: input).date().description,
+                           Fixture.dateFormatter(dateFormat: format, locale: nil, timeZone: timeZone).date(from: out)?.description,
                 file: file,
                 line: line)
         }

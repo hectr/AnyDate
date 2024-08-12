@@ -85,14 +85,4 @@ class StringProtocolSubscriptTests: XCTestCase {
         XCTAssertEqual(sub[...3], "abcd")
         XCTAssertEqual(sub[..<3], "abc")
     }
-
-    static var allTests = [
-        ("testStringSubscripts", testStringSubscripts),
-        ("testSubstringSubscript", testSubstringSubscript),
-        ("testNegativeIndex", testNegativeIndex),
-        ("testNegativeIndex", testNegativeIndex),
-        ("testOutOfBounds", testOutOfBounds),
-        ("testABCDEString", testABCDEString),
-        ("testABCDESubstring", testABCDESubstring),
-    ]
 }
