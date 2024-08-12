@@ -20,7 +20,7 @@
 
 import Foundation
 import XCTest
-import AnyDate
+@testable import AnyDate
 
 class StringProtocolSubscriptTests: XCTestCase {
     let string = "Hello USA 🇺🇸!!! Hello Brazil 🇧🇷!!!" // Source: https://stackoverflow.com/a/38215613

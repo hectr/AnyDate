@@ -22,13 +22,13 @@ import Foundation
 
 // Source: https://stackoverflow.com/a/38215613
 extension StringProtocol {
-    public subscript(offset: Int) -> Element? {
+    subscript(offset: Int) -> Element? {
         guard offset >= 0 else { return nil }
         guard let index = index(startIndex, offsetBy: offset, limitedBy: index(before: endIndex)) else { return nil }
         return self[index]
     }
 
-    public subscript(_ range: Range<Int>) -> SubSequence? {
+    subscript(_ range: Range<Int>) -> SubSequence? {
         guard range.lowerBound >= 0 else { return nil }
         let prefixLength = range.lowerBound + range.count
         guard prefixLength >= 0 else { return nil }
@@ -36,7 +36,7 @@ extension StringProtocol {
         return prefix(prefixLength).suffix(range.count)
     }
 
-    public subscript(range: ClosedRange<Int>) -> SubSequence? {
+    subscript(range: ClosedRange<Int>) -> SubSequence? {
         guard range.lowerBound >= 0 else { return nil }
         let prefixLength = range.lowerBound + range.count
         guard prefixLength >= 0 else { return nil }
@@ -44,7 +44,7 @@ extension StringProtocol {
         return prefix(prefixLength).suffix(range.count)
     }
 
-    public subscript(range: PartialRangeThrough<Int>) -> SubSequence? {
+    subscript(range: PartialRangeThrough<Int>) -> SubSequence? {
         guard range.upperBound >= 0 else { return nil }
         let prefixLength = range.upperBound.advanced(by: 1)
         guard prefixLength >= 0 else { return nil }
@@ -52,7 +52,7 @@ extension StringProtocol {
         return prefix(prefixLength)
     }
 
-    public subscript(range: PartialRangeUpTo<Int>) -> SubSequence? {
+    subscript(range: PartialRangeUpTo<Int>) -> SubSequence? {
         guard range.upperBound >= 0 else { return nil }
         let prefixLength = range.upperBound
         guard prefixLength >= 0 else { return nil }
@@ -60,7 +60,7 @@ extension StringProtocol {
         return prefix(prefixLength)
     }
 
-    public subscript(range: PartialRangeFrom<Int>) -> SubSequence? {
+    subscript(range: PartialRangeFrom<Int>) -> SubSequence? {
         guard range.lowerBound >= 0 else { return nil }
         let suffixLength = count - range.lowerBound
         guard suffixLength >= 0 else { return nil }

@@ -20,7 +20,7 @@
 
 import Foundation
 import XCTest
-import AnyDate
+@testable import AnyDate
 
 class ForLoopTests: XCTestCase {
     func testForLoopFinishes() {

@@ -20,13 +20,13 @@
 
 import Swift
 
-public enum ForLoopStatement<V> {
+enum ForLoopStatement<V> {
     case `continue`
     case `break`
     case `return`(V)
 }
 
-public enum ForLoopResult<V> {
+enum ForLoopResult<V> {
     case none
     case value(V)
 
@@ -38,7 +38,7 @@ public enum ForLoopResult<V> {
     }
 }
 
-public func forLoop<V>(initialization: () throws -> Void = {}, condition: () throws -> Bool, afterthought: () throws -> Void = {}, body: () throws -> ForLoopStatement<V>) rethrows -> ForLoopResult<V> {
+func forLoop<V>(initialization: () throws -> Void = {}, condition: () throws -> Bool, afterthought: () throws -> Void = {}, body: () throws -> ForLoopStatement<V>) rethrows -> ForLoopResult<V> {
     try initialization()
     while try condition() {
         let result = try body()
@@ -56,7 +56,7 @@ public func forLoop<V>(initialization: () throws -> Void = {}, condition: () thr
 
 
 
-public func forLoop<V>(initialization: @autoclosure () -> Void = (), condition: @autoclosure () -> Bool = true, afterthought: @autoclosure () -> Void = (), body: () throws -> ForLoopStatement<V>) rethrows -> ForLoopResult<V> {
+func forLoop<V>(initialization: @autoclosure () -> Void = (), condition: @autoclosure () -> Bool = true, afterthought: @autoclosure () -> Void = (), body: () throws -> ForLoopStatement<V>) rethrows -> ForLoopResult<V> {
     initialization()
     while condition() {
         let result = try body()
