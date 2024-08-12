@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import Idioms
 
 extension AnyDateParser {
     public struct Result {

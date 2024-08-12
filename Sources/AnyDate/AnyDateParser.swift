@@ -24,7 +24,6 @@
  */
 
 import Foundation
-import Idioms
 
 public struct AnyDateParser {
     /// Reference date.

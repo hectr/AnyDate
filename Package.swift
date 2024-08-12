@@ -9,13 +9,10 @@ let package = Package(
             name: "AnyDate",
             targets: ["AnyDate"]),
     ],
-    dependencies: [
-         .package(url: "https://github.com/hectr/swift-idioms", from: "1.2.0"),
-    ],
     targets: [
         .target(
             name: "AnyDate",
-            dependencies: ["Idioms"]),
+            dependencies: []),
         .testTarget(
             name: "AnyDateTests",
             dependencies: ["AnyDate"]),
